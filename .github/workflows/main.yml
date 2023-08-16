@@ -25,8 +25,10 @@ jobs:
         run: npm test
 
       - name: Send Teams Notification
+        if: failure()
         run: |
           curl -X POST -H "Content-Type: application/json" -d '{
-              "title": "GitHub Actions Notification",
-              "text": "Se realizaron cambios en el Github."
-            }' ${{ secrets.TEAMS_WEBHOOK }}
+              "title": "GitHub Actions Failure",
+              "text": "El flujo de trabajo ha fallado en ${{ github.repository }} (${{ github.sha }})"
+          }' ${{ secrets.TEAMS_WEBHOOK }}
+    
