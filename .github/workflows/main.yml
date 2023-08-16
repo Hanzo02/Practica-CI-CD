@@ -23,3 +23,13 @@ jobs:
         
       - name: Run Unit Tests
         run: npm test
+
+      - name: Notify on failure
+        if: failure()
+        run: |
+          echo "Subject: GitHub Action Failed" > email.txt
+          echo "To: hanselpe02@gmail.com" >> email.txt
+          echo "From: https://github.com/Hanzo02/Practica-CI-CD" >> email.txt
+          echo "" >> email.txt
+          echo "El flujo de trabajo de GitHub Actions ha fallado." >> email.txt
+          cat email.txt | sendmail -t
