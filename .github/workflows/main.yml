@@ -19,7 +19,7 @@ jobs:
           node-version: 16 
         
       - name: Install Dependencies
-        run: npm install
+        run: npm ci
         
       - name: Run Unit Tests
         run: npm test
@@ -30,16 +30,3 @@ jobs:
               "title": "GitHub Actions Notification",
               "text": "Tu mensaje de notificación aquí."
             }' ${{ secrets.TEAMS_WEBHOOK }}
-
-
-      #- name: Enviar correo electrónico en caso de fallo
-       # if: ${{ failure() }}
-       # uses: dawidd6/action-send-mail@v2.4.0
-       # with:
-        #  server_address: smtp.gmail.com
-        #  server_port: 587
-         # username: ${{ secrets.EMAIL_USERNAME }}
-         # password: ${{ secrets.EMAIL_PASSWORD }}
-         # subject: '[ERROR] La construcción ha fallado'
-          #body: 'La construcción ha fallado. Por favor revisa el flujo de trabajo para más detalles.'
-         # to: hanselpe02@gmail.com # Reemplaza esto con tu dirección de correo electrónico.
