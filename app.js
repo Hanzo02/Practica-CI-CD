@@ -6,7 +6,7 @@ app.get('/', (req, res) => {
 });
 
 app.get('/home', (req, res) =>{
-    res.status(200).send('Primer cambio')
+    res.status(200).send('Primer cambio!')
 })
 
 // Escucha en un puerto específico
