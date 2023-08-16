@@ -2,8 +2,12 @@ const express = require('express');
 const app = express();
 
 app.get('/', (req, res) => {
-    res.send('Hellouda, haciendo pruebas!'); 
+    res.status(200).send('Hellouda, haciendo pruebas!'); 
 });
+
+app.get('/home', (req, res) =>{
+    res.status(200).send('Primer cambio')
+})
 
 // Escucha en un puerto específico
 const port = process.env.PORT || 3000;
