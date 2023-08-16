@@ -28,5 +28,5 @@ jobs:
         run: |
           curl -X POST -H "Content-Type: application/json" -d '{
               "title": "GitHub Actions Notification",
-              "text": "Tu mensaje de notificación aquí."
+              "text": "Se realizaron cambios en el Github."
             }' ${{ secrets.TEAMS_WEBHOOK }}
