@@ -26,7 +26,7 @@ jobs:
 
       - name: Enviar correo electrónico en caso de fallo
         if: ${{ failure() }}
-        uses: dawidd6/action-send-mail@v3.1.0
+        uses: softprops/action-gh-release@v1
         with:
           server_address: smtp.gmail.com
           server_port: 587
