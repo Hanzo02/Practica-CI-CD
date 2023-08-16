@@ -2,7 +2,7 @@ const express = require('express');
 const app = express();
 
 app.get('/', (req, res) => {
-    res.send('Hellouda, haciendo pruebas'); 
+    res.send('Hellouda, haciendo pruebas!'); 
 });
 
 // Escucha en un puerto específico
