@@ -1,0 +1,25 @@
+name: CI/CD Workflow
+
+on:
+  push:
+    branches:
+      - main  # Cambiar esto si tu rama principal tiene otro nombre
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v2
+        
+      - name: Set Up Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: 14  # Cambia esto según la versión de Node.js que estés utilizando
+        
+      - name: Install Dependencies
+        run: npm install
+        
+      - name: Run Unit Tests
+        run: npm test
